@@ -176,14 +176,15 @@ h1 {
   display: grid;
   place-items: center;
   padding: 2px 4px 6px;
-  container-type: size;
 }
 
 .board {
   position: relative;
-  width: min(100cqw, 100cqh);
-  height: min(100cqw, 100cqh);
+  width: 100%;
+  height: auto;
+  max-height: 100%;
   aspect-ratio: 1;
+  overflow: hidden;
   border-radius: 18px;
   touch-action: none;
   user-select: none;
@@ -205,14 +206,16 @@ h1 {
 
 .lines, .points, .winline {
   position: absolute;
-  inset: var(--pad);
+  top: var(--pad);
+  left: var(--pad);
+  width: calc(100% - 2 * var(--pad));
+  height: calc(100% - 2 * var(--pad));
 }
 
 .lines, .winline {
-  overflow: visible;
+  display: block;
+  overflow: hidden;
   pointer-events: none;
-  width: auto;
-  height: auto;
 }
 
 .lines line {
