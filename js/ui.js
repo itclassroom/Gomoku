@@ -168,7 +168,7 @@
     const padX = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
     const padY = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
     const side = Math.floor(
-      Math.min(boardWrap.clientWidth - padX, boardWrap.clientHeight - padY, 740)
+      Math.min(boardWrap.clientWidth - padX, boardWrap.clientHeight - padY)
     );
     if (side < 80) return;
     board.style.width = side + "px";
